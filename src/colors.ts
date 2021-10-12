@@ -12,7 +12,7 @@ function getEffects(effectList : string[]) : string {
 export type TOptionsColor = {
     font?: string,
     background?: string,
-    effects?: string[],
+    effects?: Array<string>,
 }
 
 
