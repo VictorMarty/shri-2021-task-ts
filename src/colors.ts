@@ -21,18 +21,18 @@ export type TOptionsColor = {
     effects?: TEffectsList,
  }
 
-export function color(text : string, options : TOptionsColor) {
+export function color(text : string, options? : TOptionsColor) {
     const preparedText: string = text.replace(/ё/g, 'е');
     let result: string = '';
     if (options) {
-        if (options?.font) {
-            result = addColor(result, options?.font);
+        if (options.font) {
+            result = addColor(result, options.font);
         }
-        if (options?.background) {
-            result = addColor(result, options?.background, true);
+        if (options.background) {
+            result = addColor(result, options.background, true);
         }
-        if (options?.effects) {
-            result += getEffects(options?.effects);
+        if (options.effects) {
+            result += getEffects(options.effects);
         }
         result += preparedText;
         result += Reset;
