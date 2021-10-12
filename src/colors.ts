@@ -5,14 +5,16 @@ function addColor(text : string, color : string, isBackground : boolean = false)
     }
     return text + fontColors[color];
 }
-function getEffects(effectList : string[]) : string {
+
+type TEffectsList = string[]
+function getEffects(effectList : TEffectsList) : string {
     return effectList.map(effect => effects[effect]).join('');
 }
 
 export type TOptionsColor = {
     font?: string,
     background?: string,
-    effects?: Array<string>,
+    effects?: TEffectsList,
 }
 
 
