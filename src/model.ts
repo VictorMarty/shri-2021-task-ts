@@ -1,19 +1,14 @@
-
-interface TProperties {
-    [key: string]: string
-}
-
 export const Reset: string = '\x1b[0m';
-export const effects: TProperties = {
+export const effects = {
     bright: '\x1b[1m',
     dim: '\x1b[2m',
     italic: '\x1b[3m',
     underscore: '\x1b[4m',
     blink: '\x1b[5m',
 };
-export type TEffectsKeys = keyof typeof effects;
+export type TEffectsKeys =  keyof typeof effects;
 
-export const fontColors: TProperties = {
+export const fontColors = {
     black: '\x1b[30m',
     red: '\x1b[31m',
     green: '\x1b[32m',
@@ -24,7 +19,7 @@ export const fontColors: TProperties = {
     white: '\x1b[37m',
 };
 export type TFontColorKeys = keyof typeof fontColors;
-export const backgroundColors: TProperties = {
+export const backgroundColors= {
     black: '\x1b[40m',
     red: '\x1b[41m',
     green: '\x1b[42m',
@@ -35,7 +30,7 @@ export const backgroundColors: TProperties = {
     white: '\x1b[47m',
 };
 export type TBackgroundColorKeys = keyof typeof backgroundColors;
-export const contrast: TProperties = {
+export const contrast= {
     black: 'white',
     red: 'black',
     green: 'black',
@@ -45,3 +40,5 @@ export const contrast: TProperties = {
     cyan: 'black',
     white: 'black',
 };
+
+export type Tcontrast = typeof backgroundColors;

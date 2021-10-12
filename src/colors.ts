@@ -18,7 +18,7 @@ function getEffects(effectList : TEffectsKeys[]) : string {
 type TOptionsColor = {
     font? : TFontColorKeys,
     background?: TBackgroundColorKeys,
-    effects?: TEffectsKeys[]
+    effects?: TEffectsKeys[],
 }
 
 export function color(text : string, options : TOptionsColor) {
