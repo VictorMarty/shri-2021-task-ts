@@ -11,6 +11,8 @@ export const effects: TProperties = {
     underscore: '\x1b[4m',
     blink: '\x1b[5m',
 };
+export type TEffectsKeys = keyof typeof effects;
+
 export const fontColors: TProperties = {
     black: '\x1b[30m',
     red: '\x1b[31m',
@@ -21,6 +23,7 @@ export const fontColors: TProperties = {
     cyan: '\x1b[36m',
     white: '\x1b[37m',
 };
+export type TFontColorKeys = keyof typeof fontColors;
 export const backgroundColors: TProperties = {
     black: '\x1b[40m',
     red: '\x1b[41m',
@@ -31,6 +34,7 @@ export const backgroundColors: TProperties = {
     cyan: '\x1b[46m',
     white: '\x1b[47m',
 };
+export type TBackgroundColorKeys = keyof typeof backgroundColors;
 export const contrast: TProperties = {
     black: 'white',
     red: 'black',

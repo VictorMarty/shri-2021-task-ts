@@ -1,25 +1,25 @@
 import { backgroundColors, effects, fontColors, Reset } from './model';
-function addColor(text : string, color : string, isBackground : boolean = false): string {
+
+
+function addColor(text : string, color : TFontColorKeys | TBackgroundColorKeys, isBackground : boolean = false): string {
     if (isBackground) {
         return text + backgroundColors[color];
     }
     return text + fontColors[color];
 }
 
+import {TEffectsKeys, TFontColorKeys,TBackgroundColorKeys} from "./model"
 
-type TFont = string;
-type TBackground = string;
-type TEffectsList = string[];
 
-function getEffects(effectList : TEffectsList) : string {
+function getEffects(effectList : TEffectsKeys[]) : string {
     return effectList.map(effect => effects[effect]).join('')
 }
 
-export type TOptionsColor = {
-    font?: TFont,
-    background?: TBackground,
-    effects?: TEffectsList,
- }
+type TOptionsColor = {
+    font? : TFontColorKeys,
+    background?: TBackgroundColorKeys,
+    effects?: TEffectsKeys[]
+}
 
 export function color(text : string, options : TOptionsColor) {
     const preparedText: string = text.replace(/ё/g, 'е');

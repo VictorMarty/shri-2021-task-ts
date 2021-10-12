@@ -1,10 +1,10 @@
-import { color, TOptionsColor } from './colors';
-import { markdown, TOptionsMarkDown } from './md';
-// export type TOptions = {
-//     [key: string]: string | boolean | string[]
-// }
+import {color} from './colors';
+import {markdown} from './md';
 
-export type TOptions = TOptionsColor | TOptionsMarkDown
+export type TOptions = {
+    [key: string]: string | boolean | string[]
+}
+
 export function style(text: string, options : TOptions): string {
     if (text.length === 0) {
         return text;
