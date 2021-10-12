@@ -6,29 +6,33 @@ function addColor(text : string, color : string, isBackground : boolean = false)
     return text + fontColors[color];
 }
 
-type TEffectsList = string[]
+
+type TFont = string;
+type TBackground = string;
+type TEffectsList = string[];
+
 function getEffects(effectList : TEffectsList) : string {
-    return effectList.map(effect => effects[effect]).join('');
+    return effectList.map(effect => effects[effect]).join('')
 }
 
 export type TOptionsColor = {
-    font?: string,
-    background?: string,
+    font?: TFont,
+    background?: TBackground,
     effects?: TEffectsList,
-}
+ }
 
-export function color(text : string, options : TOptionsColor | undefined): string {
+export function color(text : string, options : TOptionsColor) {
     const preparedText: string = text.replace(/ё/g, 'е');
     let result: string = '';
     if (options) {
         if (options?.font) {
-            result = addColor(result, options.font);
+            result = addColor(result, options?.font);
         }
         if (options?.background) {
-            result = addColor(result, options.background, true);
+            result = addColor(result, options?.background, true);
         }
         if (options?.effects) {
-            result += getEffects(options.effects);
+            result += getEffects(options?.effects);
         }
         result += preparedText;
         result += Reset;
