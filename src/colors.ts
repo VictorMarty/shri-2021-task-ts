@@ -17,8 +17,7 @@ export type TOptionsColor = {
     effects?: TEffectsList,
 }
 
-
-export function color(text : string, options : TOptionsColor): string {
+export function color(text : string, options : TOptionsColor | undefined): string {
     const preparedText: string = text.replace(/ё/g, 'е');
     let result: string = '';
     if (options) {
