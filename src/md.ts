@@ -7,7 +7,7 @@ export type TOptionsMarkDown  ={
     link?: string,
 }
 
-export function markdown(text: string, options: TOptionsMarkDown) {
+export function markdown(text: string, options: TOptionsMarkDown): string {
     let result = text;
     if (options) {
         if (options.bold) {

@@ -1,17 +1,17 @@
 
-interface IProperties {
+interface TProperties {
     [key: string]: string
 }
 
 export const Reset: string = '\x1b[0m';
-export const effects: IProperties = {
+export const effects: TProperties = {
     bright: '\x1b[1m',
     dim: '\x1b[2m',
     italic: '\x1b[3m',
     underscore: '\x1b[4m',
     blink: '\x1b[5m',
 };
-export const fontColors: IProperties = {
+export const fontColors: TProperties = {
     black: '\x1b[30m',
     red: '\x1b[31m',
     green: '\x1b[32m',
@@ -21,7 +21,7 @@ export const fontColors: IProperties = {
     cyan: '\x1b[36m',
     white: '\x1b[37m',
 };
-export const backgroundColors: IProperties = {
+export const backgroundColors: TProperties = {
     black: '\x1b[40m',
     red: '\x1b[41m',
     green: '\x1b[42m',
@@ -31,7 +31,7 @@ export const backgroundColors: IProperties = {
     cyan: '\x1b[46m',
     white: '\x1b[47m',
 };
-export const contrast: IProperties = {
+export const contrast: TProperties = {
     black: 'white',
     red: 'black',
     green: 'black',

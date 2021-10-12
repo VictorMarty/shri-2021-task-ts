@@ -12,21 +12,21 @@ function getEffects(effectList : string[]) : string {
 export type TOptionsColor = {
     font?: string,
     background?: string,
-    effects?: string[]
+    effects?: string[],
 }
 
 
 export function color(text : string, options : TOptionsColor): string {
-    const preparedText = text.replace(/ё/g, 'е');
-    let result = '';
+    const preparedText: string = text.replace(/ё/g, 'е');
+    let result: string = '';
     if (options) {
-        if (options.font) {
+        if (options?.font) {
             result = addColor(result, options.font);
         }
-        if (options.background) {
+        if (options?.background) {
             result = addColor(result, options.background, true);
         }
-        if (options.effects) {
+        if (options?.effects) {
             result += getEffects(options.effects);
         }
         result += preparedText;
